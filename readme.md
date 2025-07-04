@@ -91,19 +91,11 @@ npm run dev
 - **Forgot Password**: Request an OTP to your email and reset your password.
 - **Profile**: View and update your profile and avatar.
 
-## API Endpoints
 
-- `POST /api/register` - Register a new user
-- `POST /api/login` - Login and receive JWT
-- `POST /api/authenticate` - Authenticate user by username
-- `GET /api/generate-otp` - Generate OTP for password recovery
-- `GET /api/verify-otp` - Verify OTP
-- `GET /api/create-reset-session` - Create password reset session
-- `POST /api/send-mail` - Send email (internal use)
 
 ## Security Notes
 
-- Passwords are hashed using Bcrypt before storage.
+- Passwords are hashed using Bcryptjs before storage.
 - JWT tokens are used for authentication and route protection.
 - Sensitive data is managed via environment variables.
 
