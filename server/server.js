@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import connect from './database/connection.js';
 import router from './router/rotue.js';
-
+import serverless from 'serverless-http';
 // Set up global .env access
 dotenv.config();
 
@@ -29,16 +29,18 @@ app.get('/', (req, res) => {
 });
 
 // Start server only when we have valid connection
-connect()
-    .then(() => {
-        try {
-            app.listen(PORT, () => {
-                console.log(`Server is listening on http://localhost:${PORT}`);
-            });
-        } catch (error) {
-            console.log('Cannot connect to the server...!');
-        }
-    })
-    .catch((error) => {
-        console.log('Invalid database connection...!', error);
-    });
+// connect()
+//     .then(() => {
+//         try {
+//             app.listen(PORT, () => {
+//                 console.log(`Server is listening on http://localhost:${PORT}`);
+//             });
+//         } catch (error) {
+//             console.log('Cannot connect to the server...!');
+//         }
+//     })
+//     .catch((error) => {
+//         console.log('Invalid database connection...!', error);
+//     });
+await connect();
+export const handler = serverless(app);    
