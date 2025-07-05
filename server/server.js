@@ -25,11 +25,14 @@ app.disable('x-powered-by');
 app.use('/api', router);
 
 app.get('/', (req, res) => {
-return  res.status(201).json('HOME GET REQUEST');
+  res.send({
+    activeStatus:true,
+    error:false,
+  })
 });
-app.use((req, res) => {
-    res.status(404).json({ message: 'Route not found' });
-});
+// app.use((req, res) => {
+//     res.status(404).json({ message: 'Route not found' });
+// });
 
 // Start server only when we have valid connection
 connect()
