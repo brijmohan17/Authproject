@@ -1,10 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import morgan from 'morgan';
 import dotenv from 'dotenv';
 import connect from './database/connection.js';
 import router from './router/rotue.js';
-import serverless from 'serverless-http';
 // Set up global .env access
 dotenv.config();
 
@@ -15,13 +13,11 @@ const PORT = process.env.PORT || '8080';
 // Middlewares
 app.use(express.json());
 app.use(cors({
-  origin:["http://localhost:3000","https://authproject-frontend.vercel.app"]
+  origin:["http://localhost:5173","https://authproject-frontend.vercel.app"]
 }));
 // app.use(cors());
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
-}
-app.disable('x-powered-by');
+
+// app.disable('x-powered-by');
 
 // Route API
 app.use('/api', router);
@@ -53,4 +49,6 @@ connect()
 // await connect();
 // export const handler = serverless(app);   
 // export default serverless(app);
+
+
 
