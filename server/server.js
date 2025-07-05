@@ -51,4 +51,6 @@ connect()
         console.log('Invalid database connection...!', error);
     });
 // await connect();
-export const handler = serverless(app);    
+// export const handler = serverless(app);   
+export default serverless(app);
+
