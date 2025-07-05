@@ -83,6 +83,7 @@ npm run dev
 
 - Frontend: [http://localhost:5173](http://localhost:5173)
 - Backend: [http://localhost:8080](http://localhost:8080)
+- Live :[https://authproject-frontend.vercel.app/](https://authproject-frontend.vercel.app/)
 
 ## Usage
 
