@@ -97,6 +97,6 @@ npm run dev
 
 - Passwords are hashed using Bcryptjs before storage.
 - JWT tokens are used for authentication and route protection.
-- Sensitive data is managed via environment variables.
+- Sensitive data is managed via environment variable.
 
 
